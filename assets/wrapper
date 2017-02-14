@@ -42,6 +42,10 @@ if [[ ! -e /etc/gitlab/gitlab.rb ]]; then
 	sed -i '$a host = `hostname`.strip\nexternal_url "http://#{host}"\neval ENV["GITLAB_OMNIBUS_CONFIG"].to_s' /etc/gitlab/gitlab.rb
 fi
 
+# Copy custom gitlab.rb and create data directory
+cp -f /opt/docker-gitlabce-el6/gitlab.rb /etc/gitlab/gitlab.rb
+su - git -c 'mkdir /home/git/gitlab-data/repositories'
+
 # Generate ssh host key for the first time
 #if [[ ! -f /etc/gitlab/ssh_host_rsa_key ]]; then
 #	echo "Generating ssh_host_rsa_key..."
