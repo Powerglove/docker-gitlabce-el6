@@ -258,7 +258,7 @@ external_url 'https://localhost'
 ###! **If you want to use a single non-default directory to store git data use a
 ###!   path that doesn't contain symlinks.**
 git_data_dirs({"default" => "/var/opt/gitlab/git-data",
-               "nfs"     => "/home/git/repositories"})
+               "nfs"     => "/home/git/gitlab-data"})
 
 ### For storing GitLab application uploads, eg. LFS objects, build artifacts
 ###! Docs: https://docs.gitlab.com/ce/development/shared_files.html
