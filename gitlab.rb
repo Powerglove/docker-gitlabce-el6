@@ -833,7 +833,7 @@ nginx['proxy_set_headers'] = {
 ################################################################################
 
 ##! **Set only if the select directories are created manually**
-# manage_storage_directories['enable'] = false
+manage_storage_directories['enable'] = false
 # manage_storage_directories['manage_etc'] = false
 
 ################################################################################
