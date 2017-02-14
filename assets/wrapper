@@ -44,7 +44,10 @@ fi
 
 # Copy custom gitlab.rb and create data directory
 cp -f /opt/docker-gitlabce-el6/gitlab.rb /etc/gitlab/gitlab.rb
-su - git -c 'mkdir /home/git/gitlab-data/repositories'
+
+if [[ ! -d /home/git/gitlab-data/repositories ]]; then                          
+  su - git -c 'mkdir /home/git/gitlab-data/repositories'                        
+fi 
 
 # Generate ssh host key for the first time
 #if [[ ! -f /etc/gitlab/ssh_host_rsa_key ]]; then
