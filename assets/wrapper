@@ -49,6 +49,10 @@ if [[ ! -d /home/git/gitlab-data/repositories ]]; then
   su - git -c 'mkdir /home/git/gitlab-data/repositories'                        
 fi 
 
+# Copy GitlabSecrets if present in the persistent store to the gitlab installation
+cp -f /home/git/gitlab-data/secrets/gitlab-secrets.json /etc/gitlab/gitlab-secrets.json
+
+
 # Generate ssh host key for the first time
 #if [[ ! -f /etc/gitlab/ssh_host_rsa_key ]]; then
 #	echo "Generating ssh_host_rsa_key..."
